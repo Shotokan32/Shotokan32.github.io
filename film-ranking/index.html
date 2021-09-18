@@ -23,12 +23,22 @@
 </head>
 
 <body>
-
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#!">Shotokan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://shotokan32.github.io/">Home</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</nav>
   <!-- verry top of doc -->
-  <header>
-    <h1 class="header-text">Film Ranking</h1>
-  </header>
-
+  
   <br>
 
   <!-- review Card -->
@@ -36,6 +46,9 @@
   <div class="container" id="app">
     <div class="row">
 
+
+
+      <!-- ET-->
       <div class="card mb-3 px-2 col-6">
         <div class="row g-0">
           <div class="col-md-4">
@@ -63,12 +76,25 @@
 
               <!-- review author -->
               <p class="card-text"><small class="text-muted">Review By: Donald Trump</small></p>
+              
+              <button type="button" class="btn btn-primary" onClick="vueApp.likeFunction();">
+                <i class="bi bi-hand-thumbs-up"></i>
+                Like: {{ likes }}
+              </button>
+
+              <button type="button" class="btn btn-danger" onClick="vueApp.dislikeFunction();">
+                <i class="bi bi-hand-thumbs-down"></i>
+                Dislike: {{ dislikes }}
+              </button>
+              
             </div>
           </div>
         </div>
       </div>
 
 
+
+      <!-- Back to the Future -->
       <div class="card mb-3 px-2 col-6">
         <div class="row g-0">
           <div class="col-md-4">
@@ -94,10 +120,25 @@
 
               <!-- review author -->
               <p class="card-text"><small class="text-muted">Review By: Doc Who</small></p>
+
+              <button type="button" class="btn btn-primary" onClick="vueApp.likeFunction();">
+                <i class="bi bi-hand-thumbs-up"></i>
+                Like: {{ likes }}
+              </button>
+
+              <button type="button" class="btn btn-danger" onClick="vueApp.dislikeFunction();">
+                <i class="bi bi-hand-thumbs-down"></i>
+                Dislike: {{ dislikes }}
+              </button>
+
             </div>
           </div>
         </div>
       </div>
+
+
+
+      <!-- Empire Strikes Back -->
 
       <div class="card mb-3 px-2 col-6">
         <div class="row g-0">
@@ -120,7 +161,8 @@
               </div>
 
               <!-- content of review -->
-              <p class="card-text">Probably the best Star Wars film that anyone has ever seen. I mean who doesn't like Luke losing an arm, I mean it's the best part of the film for me.</p>
+              <p class="card-text">Probably the best Star Wars film that anyone has ever seen. I mean who doesn't like
+                Luke losing an arm, I mean it's the best part of the film for me.</p>
 
               <!-- review author -->
               <p class="card-text"><small class="text-muted">Review By: Lenny Henry</small></p>
@@ -140,6 +182,50 @@
         </div>
       </div>
 
+
+
+      <!-- Spaceballs -->
+
+      <div class="card mb-3 px-2 col-6">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMjA0MTY0MzEzOV5BMl5BanBnXkFtZTcwOTc0MjI3NA@@._V1_.jpg"
+              class="img-fluid rounded-start" alt="Its ET m8">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+
+              <!-- Score and Title -->
+              <div class="card-title row mt-0 pt-0">
+                <div class="card col-3 mt-0 pt-0">
+                  <h3>00</h3>
+                </div>
+                <div class="col-9 mt-0 pt-0">
+                  <h3>What a ripoff.</h3>
+                </div>
+              </div>
+
+              <!-- content of review -->
+              <p class="card-text">If I wanted to watch Star Wars I would watch the original films. It's not even that funny and you need an IQ of at least 140 to understand its complexities.</p>
+
+              <!-- review author -->
+              <p class="card-text"><small class="text-muted">Review By: Mace Windyass</small></p>
+
+              <button type="button" class="btn btn-primary" onClick="vueApp.likeFunction();">
+                <i class="bi bi-hand-thumbs-up"></i>
+                Like: {{ likes }}
+              </button>
+
+              <button type="button" class="btn btn-danger" onClick="vueApp.dislikeFunction();">
+                <i class="bi bi-hand-thumbs-down"></i>
+                Dislike: {{ dislikes }}
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
       <button type="button" class="btn btn-danger" onClick="firstFunction();">Don't Click</button>
 
     </div>
@@ -151,22 +237,7 @@
 </html>
 
 <style>
-  br {
 
-    line-height: 50px;
-  }
-
-  header {
-    background-color: #303030;
-    height: 80px;
-    width: 100%
-  }
-
-  .header-text {
-    color: white;
-    text-align: center;
-    padding-top: 25px;
-  }
 </style>
 
 <script>
@@ -181,7 +252,7 @@
       likes: 0,
       dislikes: 0,
     },
-    mounted(){
+    mounted() {
       console.log('mounted!');
       this.likes = 0;
       this.dislikes = 0;
